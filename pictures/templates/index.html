@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load sitetree %}
+
+		{% block title %}{% endblock %}
+
+		{% block content %}
+		{% sitetree_menu from "mytree" include "trunk,topmenu" %}
+
+			{% for featured_image in object_list %}
+				{{ set_id }}
+				{{ name }}
+				{{ featured_image }}
+				{{ slug }}
+			{% endfor %}
+
+		{% endblock content %}

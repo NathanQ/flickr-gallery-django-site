@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block css %}
+	<link href="{% static 'css/justifiedGallery.css' %}" rel="stylesheet">
+	<link href="{% static 'css/fancybox.css' %}" rel="stylesheet">
+{% endblock css %}
+
+
+{% block title %}
+{% endblock title %}
+
+
+{% block content %}
+	<div class="col-md-push-3 col-md-9">
+		<h1>{{photoset.name}}</h1>
+		<div class="gallery">
+			{% for photo in photoset.photoset_urls %}
+				<a href="{{photo.large}}" data-fancybox="group" >
+					<img src="{{photo.small}}"/>
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock content %}
+
+
+{% block javascript %}
+	<script src="{% static 'js/justifiedGallery.js' %}"></script>
+	<script src="{% static 'js/fancybox.min.js' %}"></script>
+	<!-- <script src="{% static 'js/ios-orientationchange-fix.js' %}"></script> -->
+	<script type="text/javascript">
+		$(function() {
+			$('.gallery').justifiedGallery({
+				rowHeight : 300,
+			    lastRow : 'justify',
+			    margins : 2,
+				rel : 'gallery'
+			}).on('jg.complete', function () {
+			    $('.img').fancybox();
+			});
+		});
+	</script>
+{% endblock javascript %}
