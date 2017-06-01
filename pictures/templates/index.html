@@ -1,16 +1,31 @@
 {% extends "base.html" %}
-{% load sitetree %}
+{% load staticfiles %}
 
-		{% block title %}{% endblock %}
+{% block title %}{% endblock %}
 
-		{% block content %}
-		{% sitetree_menu from "mytree" include "trunk,topmenu" %}
+{% block content %}
+<div class="set">
+  <div class="gallery">
+  	{% for set in set_list %}
+  		<a href="{{ set.slug }}">
+        <img src="{{ set.featured_image }}" />
+        <h3>{{ set.name }}</h3>
+      </a>
+  	{% endfor %}
+  </div>
+</div>
+{% endblock content %}
 
-			{% for featured_image in object_list %}
-				{{ set_id }}
-				{{ name }}
-				{{ featured_image }}
-				{{ slug }}
-			{% endfor %}
-
-		{% endblock content %}
+{% block javascript %}
+	<script src="{% static 'js/justifiedGallery.js' %}"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.gallery').justifiedGallery({
+				rowHeight : 300,
+			    lastRow : 'justify',
+			    margins : 16,
+				rel : 'gallery'
+			});
+		});
+	</script>
+{% endblock javascript %}

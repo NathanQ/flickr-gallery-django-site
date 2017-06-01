@@ -1,12 +1,8 @@
-
-// project specific CSS goes here
-
+@import './nav';
 ////////////////////////////////
-		//Variables//
+//Variables//
 ////////////////////////////////
-
 // Alert colors
-
 $white: #fff;
 $mint-green: #d6e9c6;
 $black: #000;
@@ -14,16 +10,21 @@ $pink: #f2dede;
 $dark-pink: #eed3d7;
 $red: #b94a48;
 
-////////////////////////////////
-		//Alerts//
-////////////////////////////////
+// hidden dr colors
+$primary: #99A6B9;
+$green: #85917A;
+$grey: #6B6B6B;
 
+
+////////////////////////////////
+//Alerts//
+////////////////////////////////
 // bootstrap alert CSS, translated to the django-standard levels of
 // debug, info, success, warning, error
 
 .alert-debug {
   background-color: $white;
-  border-color: $mint-green;
+  border-color: $green;
   color: $black;
 }
 
@@ -33,20 +34,93 @@ $red: #b94a48;
   color: $red;
 }
 
-////////////////////////////////
-		//Navbar//
-////////////////////////////////
-
-// This is a fix for the bootstrap4 alpha release
-
-.navbar {
-  border-radius: 0px;
+body,
+html {
+  background-color: #6B6B6B !important;
+  color: #373a3c;
+  font-family: 'Raleway', sans-serif;
 }
 
-body {
-  background-color: black !important;
+a {
+  color: #373a3c;
+  &:hover,
+  &:focus {
+    color: black;
+  }
 }
 
+h1,
+h2,
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  color: rgba(0, 0, 0, 0.79);
+}
+
+h1 {
+  margin-top: 16px;
+  font-size: 2.0rem;
+  margin-left: 16px;
+}
+
+form {
+  margin-left: 16px;
+}
+
+.btn-primary {
+  background-color: $green;
+  border-color: $green;
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    background-color: darken($green, 10%);
+    border-color: darken($green, 10%);
+  }
+}
+.set {
+  h1 {
+    margin-top: 26px;
+    margin-bottom: -5px;
+  }
+  a {
+    h3 {
+      position: absolute;
+      text-align: right;
+      color: #6B6B6B;
+      bottom: -8px;
+      padding: 16px 16px 16px 16px;
+      background: rgba(0,0,0,0.666);
+      width: 100%;
+      opacity: 0;
+      -moz-transition: opacity 0.2s ease-in-out;
+      -webkit-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out;
+    }
+    &:hover {
+      -moz-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+      -webkit-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+      box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+      -moz-transition: -moz-box-shadow 0.2s ease-in-out;
+      -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
+      transition: box-shadow 0.2s ease-in-out;
+      h3 {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+nav ul {
+  width: 100%;
+  float: left;
+  clear: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    width: 100%;
+  }
+}
 @media (max-width: 47.9em) {
   .navbar-nav .nav-item {
     display: inline-block;
@@ -63,14 +137,131 @@ body {
   }
 }
 
-////////////////////////////////
-		//Django Toolbar//
-////////////////////////////////
+@-o-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
 
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+    background: transparent;
+  }
+
+  90% {
+    opacity: 1;
+    background: transparent;
+  }
+
+  91% {
+    opacity: .2;
+    background: transparent;
+  }
+
+  93% {
+    opacity: 1;
+    background: transparent;
+  }
+
+  95% {
+    opacity: 0;
+    background: transparent;
+  }
+
+  97% {
+    opacity: .7;
+    background: black;
+  }
+
+  98% {
+    opacity: .2;
+    background: transparent;
+  }
+
+  100% {
+    opacity: 1;
+    background: transparent;
+  }
+}
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+    background: transparent;
+  }
+
+  90% {
+    opacity: 1;
+    background: transparent;
+  }
+
+  92% {
+    opacity: .2;
+    background: transparent;
+  }
+
+  93% {
+    opacity: 1;
+    background: transparent;
+  }
+
+  95% {
+    opacity: 0;
+    background: transparent;
+  }
+
+  97% {
+    opacity: .7;
+    background: black;
+  }
+
+  98% {
+    opacity: .2;
+    background: transparent;
+  }
+
+  100% {
+    opacity: 1;
+    background: transparent;
+  }
+}
+
+.animate-flicker {
+  -webkit-animation: flickerAnimation 5s infinite;
+  -moz-animation: flickerAnimation 5s infinite;
+  -o-animation: flickerAnimation 5s infinite;
+  animation: flickerAnimation 5s infinite;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+  background: transparent;
+}
+////////////////////////////////
+//Django Toolbar//
+////////////////////////////////
 // Display django-debug-toolbar.
 // See https://github.com/django-debug-toolbar/django-debug-toolbar/issues/742
 // and https://github.com/pydanny/cookiecutter-django/issues/317
 
-[hidden][style="display: block;"] {
+[hidden][style="display:block;"] {
   display: block !important;
 }

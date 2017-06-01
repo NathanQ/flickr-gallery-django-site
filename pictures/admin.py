@@ -1,12 +1,10 @@
 from django.contrib import admin
-from django import forms
 from django.conf import settings
 
 from . models import Flickr_Account, Set
 
 import flickr_api
-import requests
-import sys
+
 
 class SetAdmin(admin.ModelAdmin):
     class Meta:
@@ -37,33 +35,32 @@ class SetAdmin(admin.ModelAdmin):
 
         # 1.1
         flickr_api.set_keys(
-    		api_key = settings.FLICKR_API_KEY,
-    		api_secret = settings.FLICKR_API_SECRET
-    	)
-    	flickr_api.set_auth_handler('flickr_credentials.dat')
+            api_key=settings.FLICKR_API_KEY,
+            api_secret=settings.FLICKR_API_SECRET
+        )
+        flickr_api.set_auth_handler('flickr_credentials.dat')
 
-        #1.2
+        # 1.2
         obj.photoset_urls = []
-    	photos = flickr_api.Photoset(id = obj.set_id).getPhotos()
-    	for photo in photos:
-    		try:
-    			dikt = {
-    				'small': photo.getPhotoFile(size_label='Medium'),
-    				'large': photo.getPhotoFile(size_label='Large')
-    			}
-    			obj.photoset_urls.append(dikt.copy())
+        photos = flickr_api.Photoset(id=obj.set_id).getPhotos()
+        for photo in photos:
+            try:
+                dikt = {
+                    'small': photo.getPhotoFile(size_label='Medium'),
+                    'large': photo.getPhotoFile(size_label='Large')
+                    }
+                obj.photoset_urls.append(dikt.copy())
 
-    		except Exception, e:
-    			small = 'oops'
+            except Exception, e:
+                small = 'oops'
 
-        #2.1
+        # 2.1
         if obj.featured_image is not None:
             for i, elem in enumerate(obj.photoset_urls):
                 if obj.featured_image in elem['small']:
                     obj.photoset_urls.insert(0, obj.photoset_urls.pop(i))
 
         super(SetAdmin, self).save_model(request, obj, form, change)
-
 
 
 admin.site.register(Flickr_Account)

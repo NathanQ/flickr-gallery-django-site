@@ -7,21 +7,21 @@
 {% endblock css %}
 
 
-{% block title %}
+{% block title %} | {{photoset.name}}
 {% endblock title %}
 
 
 {% block content %}
-	<div class="col-md-push-3 col-md-9">
-		<h1>{{photoset.name}}</h1>
-		<div class="gallery">
-			{% for photo in photoset.photoset_urls %}
-				<a href="{{photo.large}}" data-fancybox="group" >
-					<img src="{{photo.small}}"/>
-				</a>
-			{% endfor %}
-		</div>
-	</div>
+<div class="set">
+  <h1>{{photoset.name}}</h1>
+  <div class="gallery">
+  	{% for photo in photoset.photoset_urls %}
+  		<a href="{{photo.large}}" data-fancybox="group" >
+  			<img src="{{photo.small}}"/>
+  		</a>
+  	{% endfor %}
+  </div>
+</div>
 {% endblock content %}
 
 
@@ -34,7 +34,7 @@
 			$('.gallery').justifiedGallery({
 				rowHeight : 300,
 			    lastRow : 'justify',
-			    margins : 2,
+			    margins : 16,
 				rel : 'gallery'
 			}).on('jg.complete', function () {
 			    $('.img').fancybox();

@@ -1,1 +1,25 @@
 {% extends "base.html" %}
+{% load pictures_list_tags staticfiles %}
+
+{% block css %}
+	<link href="{% static 'css/justifiedGallery.css' %}" rel="stylesheet">
+{% endblock css %}
+
+{% block content %}
+{% set_list %}
+{% endblock content %}
+
+{% block javascript %}
+	<script src="{% static 'js/justifiedGallery.js' %}"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.gallery').justifiedGallery({
+				rowHeight : 300,
+			  lastRow : 'justify',
+			  margins : 16,
+				rel : 'gallery',
+        imagesAnimationDuration: 500
+			});
+		});
+	</script>
+{% endblock javascript %}

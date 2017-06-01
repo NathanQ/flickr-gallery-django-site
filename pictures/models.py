@@ -8,7 +8,7 @@ from django.utils.safestring import mark_safe
 
 class Flickr_Account(models.Model):
     flickr_id = models.CharField(
-        max_length = 50,
+        max_length=50,
         help_text=mark_safe('The Flickr id is the Flickr album owner and is used by the app to find information about the photosets. To determine your ID, visit your Flickr profile page and look for it at the end of the URL. For example, "www.flickr.com/photos/<strong>12341234@N12</strong>/"'))
     name = models.CharField(
         max_length=200,
@@ -31,7 +31,7 @@ class Set(models.Model):
         null=False,
         blank=False,
         help_text=mark_safe('The set id is what photo set to display. To find this, open the Flickr photo set and copy the last string of characters in the end of the URL. For example, https://www.flickr.com/photos/146011281@N02/albums/<strong style="color: red">72157676287467202</strong>'))
-    flickr_set_owner = models.OneToOneField(
+    flickr_set_owner = models.ForeignKey(
         Flickr_Account,
         null=False,
         blank=False,
@@ -40,7 +40,7 @@ class Set(models.Model):
         max_length=200,
         null=True,
         blank=True,
-        help_text=mark_safe('The featured image is the image which will be displayed in the list of photosets and be listed as the first one in the photoset.<br>To find it, click the image in the photoset and copy the characters before "/in/album". For example, https://www.flickr.com/photos/146011281@N02/<strong style="color:red">30965802203</strong>/in/album-72157676287467202/'))
+        help_text=mark_safe('The featured image is the image which will be displayed in the list of photosets.<br>To find it, click the image in the photoset and copy the url. For example, https://www.flickr.com/photos/146011281@N02/30965802203/in/album-72157676287467202/'))
     slug = models.SlugField(
         slugify('url'),
         null=False,

@@ -1,0 +1,75 @@
+
+// .navbar,
+// .collapse,
+// .collapsing {
+//   border-radius: 0;
+//   .pull-xs-right,
+//   .collapse,
+//   .collapsing {
+//     clear: both;
+//   }
+//   float:left;
+//   width: 100%;
+//   float: left;
+.navbar{
+    width: 100%;
+  > li {
+    float: left;
+    width: 100%;
+    clear: left;
+  }
+  li a {
+    display: block;
+    padding:12px 0 6px 8px;
+    color: rgba(0, 0, 0, 0.79);
+    font-family: 'Ubuntu', sans-serif;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0.79);
+      color: #6B6B6B;
+      outline: none;
+    }
+  }
+}
+
+span.navbar-toggler-icon {
+    margin-top: 2px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.navbar-brand>img {
+  padding: 12px 8px;
+  background-color: transparent !important;
+  margin: 5px 16px 12px 0px;
+  width: 100%;
+  max-width: 320px;
+  &:hover {
+    -moz-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+    -moz-transition: -moz-box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
+    -webkit-transition: -webkit-box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
+    background: black !important;
+    -webkit-animation: 0;
+    animation: 0;
+  }
+
+  @media(max-width: 768px) {
+    float: left;
+    width: calc(100% - 56px);
+  }
+}
+// .navbar-brand {
+//   width: 100%;
+// }
+// .navbar-nav {
+//   width: 100%;
+// }
+//
+// .navbar-nav .nav-item+.nav-item {
+//   margin-left: 0;
+// }

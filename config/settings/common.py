@@ -29,6 +29,7 @@ DJANGO_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.flatpages',
 
     # Useful template tags:
     # 'django.contrib.humanize',
@@ -51,6 +52,7 @@ LOCAL_APPS = (
     'hidden_darkroom.users.apps.UsersConfig',
     # Your stuff: custom apps go here
     'pictures',
+    'contact_form'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

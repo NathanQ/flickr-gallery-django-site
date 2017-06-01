@@ -11,16 +11,16 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   var pathsConfig = function (appName) {
-    // this.app = appName + '/hidden_darkroom' || appConfig.name;
-    this.app = '/Users/nathanvictor/Sites/hiddendarkroom/hidden_darkroom/hidden_darkroom'
+    this.app = appName || appConfig.name;
+
     return {
       app: this.app,
       templates: this.app + '/templates',
-      css: this.app + '/static/css',
-      sass: this.app + '/static/sass',
-      fonts: this.app + '/static/fonts',
-      images: this.app + '/static/images',
-      js: this.app + '/static/js',
+      css: '/Users/nathanvictor/Sites/hiddendarkroom/hidden_darkroom/hidden_darkroom/static/css',
+      sass: '/Users/nathanvictor/Sites/hiddendarkroom/hidden_darkroom/hidden_darkroom/static/sass',
+      fonts: '/Users/nathanvictor/Sites/hiddendarkroom/hidden_darkroom/hidden_darkroom/static/fonts',
+      images: '/Users/nathanvictor/Sites/hiddendarkroom/hidden_darkroom/hidden_darkroom/static/images',
+      js: '/Users/nathanvictor/Sites/hiddendarkroom/hidden_darkroom/hidden_darkroom/static/js',
       manageScript: 'manage.py',
     }
   };

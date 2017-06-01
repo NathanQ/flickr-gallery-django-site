@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} | Contact{% endblock %}
+
+{% block content %}
+<h1>Contact</h1>
+<form role="form" action="" method="post">
+    {% csrf_token %}
+    {% crispy form %}
+</form>
+
+{% endblock %}

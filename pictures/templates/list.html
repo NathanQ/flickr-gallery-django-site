@@ -1,0 +1,10 @@
+<div class="set">
+  <div class="gallery">
+  	{% for set in sets %}
+  		<a href="set/{{ set.slug }}">
+        <img src="{{ set.featured_image }}" />
+        <h3>{{ set.name }}</h3>
+      </a>
+  	{% endfor %}
+  </div>
+</div>
