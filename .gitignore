@@ -66,6 +66,8 @@ node_modules/
 
 # virtual environments
 .env
+production.py
+local.py
 
 # User-uploaded media
 hidden_darkroom/media/

@@ -35,14 +35,14 @@ class SetAdmin(admin.ModelAdmin):
 
         # 1.1
         flickr_api.set_keys(
-            api_key=settings.FLICKR_API_KEY,
-            api_secret=settings.FLICKR_API_SECRET
+            api_key=str(settings.FLICKR_API_KEY),
+            api_secret=str(settings.FLICKR_API_SECRET)
         )
         flickr_api.set_auth_handler('flickr_credentials.dat')
 
         # 1.2
         obj.photoset_urls = []
-        photos = flickr_api.Photoset(id=obj.set_id).getPhotos()
+        photos = flickr_api.Photoset(id=str(obj.set_id)).getPhotos()
         for photo in photos:
             try:
                 dikt = {
