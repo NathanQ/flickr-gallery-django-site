@@ -1,4 +1,4 @@
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives 
 from django.shortcuts import render
 from django.template import Context
 from django.template.loader import get_template
@@ -26,15 +26,15 @@ def contact(request):
                 'email': email,
                 'message': message,
             })
-            content = template.render(context)
-
-            email = EmailMessage(
-                "New contact form submission",
-                content,
-                "Hidden Darkroom" + '',
-                ['youremail@gmail.com'],
-                headers={'Reply-To': email}
+            # content = template.render(context)
+            email = EmailMultiAlternatives(
+                subject="Website form submission",
+                body=message,
+                from_email=email, 
+                to=["Whitney Young <wyounghd@gmail.com>"],
+                reply_to=[email]
             )
+            email.attach_alternative(message, "text/html")
             email.send()
             messages.add_message(request, messages.SUCCESS, 'Message sent!')
         else:
