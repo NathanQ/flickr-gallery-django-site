@@ -8,11 +8,11 @@
     display: block;
     padding: 12px 0 6px 8px;
     color: rgba(0, 0, 0, 0.79);
-    font-family: 'Ubuntu', sans-serif; }
+    font-family: "industry-inc-base", sans-serif; }
     .navbar li a:hover, .navbar li a:focus {
       text-decoration: none;
-      background: rgba(0, 0, 0, 0.79);
-      color: #6B6B6B;
+      background: #8CCFB7;
+      color: white;
       outline: none; }
 
 span.navbar-toggler-icon {
@@ -26,16 +26,6 @@ span.navbar-toggler-icon {
   margin: 5px 16px 12px 0px;
   width: 100%;
   max-width: 320px; }
-  .navbar-brand > img:hover {
-    -moz-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
-    -webkit-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
-    box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
-    -moz-transition: -moz-box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
-    -webkit-transition: -webkit-box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
-    transition: box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
-    background: black !important;
-    -webkit-animation: 0;
-    animation: 0; }
   @media (max-width: 768px) {
     .navbar-brand > img {
       float: left;
@@ -43,7 +33,7 @@ span.navbar-toggler-icon {
 
 .alert-debug {
   background-color: #fff;
-  border-color: #85917A;
+  border-color: #8CCFB7;
   color: #000; }
 
 .alert-error {
@@ -53,20 +43,21 @@ span.navbar-toggler-icon {
 
 body,
 html {
-  background-color: #6B6B6B !important;
-  color: #373a3c;
-  font-family: 'Raleway', sans-serif; }
+  background-color: white !important;
+  color: #656867;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
+  font-size: 1rem; }
 
 a {
-  color: #373a3c; }
+  color: #656867; }
   a:hover, a:focus {
     color: black; }
 
 h1,
 h2,
 h3 {
-  font-family: 'Ubuntu', sans-serif;
-  color: rgba(0, 0, 0, 0.79); }
+  font-family: "industry-inc-base", sans-serif;
+  color: #79BCE7; }
 
 h1 {
   margin-top: 16px;
@@ -77,12 +68,12 @@ form {
   margin-left: 16px; }
 
 .btn-primary {
-  background-color: #85917A;
-  border-color: #85917A; }
+  background-color: #8CCFB7;
+  border-color: #8CCFB7; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     outline: none;
-    background-color: #6c7662;
-    border-color: #6c7662; }
+    background-color: #68c0a0;
+    border-color: #68c0a0; }
 
 .set h1 {
   margin-top: 26px;

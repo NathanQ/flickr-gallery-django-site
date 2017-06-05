@@ -12,8 +12,10 @@ $red: #b94a48;
 
 // hidden dr colors
 $primary: #99A6B9;
-$green: #85917A;
+$green: #8CCFB7;
 $grey: #6B6B6B;
+$blue: #79BCE7;
+$yellow: #F4CF7A;
 
 
 ////////////////////////////////
@@ -36,13 +38,14 @@ $grey: #6B6B6B;
 
 body,
 html {
-  background-color: #6B6B6B !important;
-  color: #373a3c;
-  font-family: 'Raleway', sans-serif;
+  background-color: white !important;
+  color: #656867;
+  font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
+  font-size: 1rem;
 }
 
 a {
-  color: #373a3c;
+  color: #656867;
   &:hover,
   &:focus {
     color: black;
@@ -52,8 +55,8 @@ a {
 h1,
 h2,
 h3 {
-  font-family: 'Ubuntu', sans-serif;
-  color: rgba(0, 0, 0, 0.79);
+  font-family: "industry-inc-base", sans-serif;
+  color: $blue;
 }
 
 h1 {

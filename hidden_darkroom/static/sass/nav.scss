@@ -1,4 +1,4 @@
-
+// @import './project.scss';
 // .navbar,
 // .collapse,
 // .collapsing {
@@ -22,12 +22,12 @@
     display: block;
     padding:12px 0 6px 8px;
     color: rgba(0, 0, 0, 0.79);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "industry-inc-base", sans-serif;
     &:hover,
     &:focus {
       text-decoration: none;
-      background: rgba(0, 0, 0, 0.79);
-      color: #6B6B6B;
+      background: #8CCFB7;
+      color: white;
       outline: none;
     }
   }
@@ -46,17 +46,17 @@ span.navbar-toggler-icon {
   margin: 5px 16px 12px 0px;
   width: 100%;
   max-width: 320px;
-  &:hover {
-    -moz-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
-    -webkit-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
-    box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
-    -moz-transition: -moz-box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
-    -webkit-transition: -webkit-box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
-    transition: box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
-    background: black !important;
-    -webkit-animation: 0;
-    animation: 0;
-  }
+  // &:hover {
+  //   -moz-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+  //   -webkit-box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+  //   box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.65);
+  //   -moz-transition: -moz-box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
+  //   -webkit-transition: -webkit-box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
+  //   transition: box-shadow 0.2s ease-in-out, padding 0.2s, margin-bottom 0.2s, background 0.2s ease-in-out;
+  //   background: black !important;
+  //   -webkit-animation: 0;
+  //   animation: 0;
+  // }
 
   @media(max-width: 768px) {
     float: left;
