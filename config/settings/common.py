@@ -79,7 +79,8 @@ MIGRATION_MODULES = {
 # DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = env.bool('DJANGO_DEBUG', False)
+# DEBUG = env.bool('DJANGO_DEBUG', False)
+DEBUG = False
 
 # FIXTURE CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -164,6 +165,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.csrf',
                 # Your stuff: custom template context processors go here
             ],
         },
